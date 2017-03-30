@@ -134,7 +134,9 @@
              * @param {Function} callback - function to invoke once fade has completed.
              */
             dismiss: function() {
-                this.template.fadeOut(FADE_OUT_DURATION, this.destroy.bind(this));
+                if (this.template) { // fix to prevent "Cannot read property 'fadeOut' of null" error
+                    this.template.fadeOut(FADE_OUT_DURATION, this.destroy.bind(this));
+                }
             },
 
             /**
