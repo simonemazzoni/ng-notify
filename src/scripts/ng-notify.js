@@ -533,7 +533,7 @@
                  */
                 var afterShow = function() {
 
-                    if (notification.options.isSticky) {
+                    if (notification.options && notification.options.isSticky) {
                         return;
                     }
 
